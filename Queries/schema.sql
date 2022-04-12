@@ -1,14 +1,14 @@
--- Delete tables, if they exist
+-- Delete tables, if they exist, or if they're connected to other tables (i.e. use CASCADE):
 
-DROP TABLE departments IF EXISTS;
-DROP TABLE employees IF EXISTS;
-DROP TABLE dept_manager IF EXISTS;
-DROP TABLE salaries IF EXISTS;
-DROP TABLE dept_employees IF EXISTS;
-DROP TABLE titles IF EXISTS;
+DROP TABLE departments CASCADE;
+DROP TABLE employees CASCADE;
+DROP TABLE dept_manager CASCADE;
+DROP TABLE salaries CASCADE;
+DROP TABLE dept_employees CASCADE;
+DROP TABLE titles CASCADE;
 
 
--- Creating tables for PH-EmployeeDB
+-- Creating tables for PH-EmployeeDB:
 
 CREATE TABLE departments (
      dept_no VARCHAR(4) NOT NULL,
@@ -65,8 +65,8 @@ CREATE TABLE titles (
       PRIMARY KEY (emp_no)
 );
 
--- View all of the charts/data
--- NOTE: Use SELECT count(*) FROM (table_name): to count all rows, after import
+-- View all of the charts/data:
+-- NOTE: Use SELECT count(*) FROM (table_name): to count all rows, after import.
 
 SELECT * FROM departments;
 SELECT * FROM dept_employees;
