@@ -1,4 +1,5 @@
 -- Delete tables, if they exist
+
 DROP TABLE departments IF EXISTS;
 DROP TABLE employees IF EXISTS;
 DROP TABLE dept_manager IF EXISTS;
@@ -64,7 +65,9 @@ CREATE TABLE titles (
       PRIMARY KEY (emp_no)
 );
 
--- View all of the data
+-- View all of the charts/data
+-- NOTE: Use SELECT count(*) FROM (table_name): to count all rows, after import
+
 SELECT * FROM departments;
 SELECT * FROM dept_employees;
 SELECT * FROM dept_manager;
