@@ -43,6 +43,7 @@ ORDER BY "Title Count" DESC;
 --Deliverable 2:
 
 -- Query to create a Mentorship Eligibility table
+
 SELECT DISTINCT ON (e.emp_no) e.emp_no,
 	e.first_name
 	e.last_name
@@ -61,6 +62,52 @@ AND (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 ORDER BY e.emp_no;
 
 
+--Deliverable 3:
+
+-- Count how many can Mentor from each department:
+
+SELECT COUNT(me.title) AS "Title Count", me.title
+--INTO mentor_list
+FROM mentorship_eligibilty AS me
+GROUP BY me.title
+ORDER BY "Title Count" DESC;
 
 
+-- Count the number of retiring employees by title and by year:
 
+SELECT COUNT(ut.title) as "Title Count", 
+	ut.title
+	e.birth_date
+--INTO 1952_titles
+FROM unique_titles as ut, employees as e
+WHERE (e.birth_date BETWEEN '1952-01-01' AND '1952-12-31')
+GROUP BY ut.title
+ORDER BY "Title Count" DESC;
+
+
+SELECT COUNT(ut.title) as "Title Count", 
+	ut.title
+	e.birth_date
+--INTO 1953_titles
+FROM unique_titles as ut, employees as e
+WHERE (e.birth_date BETWEEN '1953-01-01' AND '1953-12-31')
+GROUP BY ut.title
+ORDER BY "Title Count" DESC;
+
+SELECT COUNT(ut.title) as "Title Count", 
+	ut.title
+	e.birth_date
+--INTO 1954_titles
+FROM unique_titles as ut, employees as e
+WHERE (e.birth_date BETWEEN '1954-01-01' AND '1954-12-31')
+GROUP BY ut.title
+ORDER BY "Title Count" DESC;
+
+SELECT COUNT(ut.title) as "Title Count", 
+	ut.title
+	e.birth_date
+--INTO 1955_titles
+FROM unique_titles as ut, employees as e
+WHERE (e.birth_date BETWEEN '1955-01-01' AND '1955-12-31')
+GROUP BY ut.title
+ORDER BY "Title Count" DESC;
