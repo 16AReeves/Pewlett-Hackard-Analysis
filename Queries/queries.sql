@@ -234,6 +234,13 @@ ON (ri.emp_no = di.emp_no)
 WHERE di.dept_name IN ('Sales', 'Development');
 
 
+--number of employees retiring: 72,458
 
-
-
+-- Find number of current employees
+SELECT COUNT(DISTINCT e.emp_no)
+FROM employees as e
+INNER JOIN dept_employees as de
+ON (e.emp_no = de.emp_no)
+WHERE (to_date = '9999-01-01')
+-- current employees: 240,124
+-- Percentage of employees retiring: 30.2%
