@@ -1,6 +1,6 @@
 # Pewlett-Hackard-Analysis
 ---
-## Performing analysis on PH employee data to determine what employees could be retiring
+## Module 7: Performing analysis on PH employee data to determine what employees could be retiring using PostGres SQL
 ---
 ### Data analysis on current employees born between 1952 and 1955
 ---
